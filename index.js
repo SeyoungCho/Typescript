@@ -145,3 +145,88 @@ var 링크변경버튼 = document.querySelector('#linkChange');
         }
     });
 });
+var People = /** @class */ (function () {
+    function People(a) {
+        this.name = a;
+    }
+    People.prototype.함수 = function (a) {
+        console.log('안녕' + a);
+    };
+    return People;
+}());
+var human = new People('kim');
+console.log(human.name);
+console.log(human.함수('기모창'));
+var Car = /** @class */ (function () {
+    function Car(a, b) {
+        this.model = a;
+        this.price = b;
+    }
+    Car.prototype.tax = function () {
+        return this.price / 10;
+    };
+    return Car;
+}());
+var car1 = new Car('소나타', 3000);
+console.log(car1);
+console.log(car1.tax());
+var Word = /** @class */ (function () {
+    function Word() {
+        var a = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            a[_i] = arguments[_i];
+        }
+        var numbers = [];
+        var strings = [];
+        a.forEach(function (element) {
+            if (typeof element === 'number') {
+                numbers.push(element);
+            }
+            else if (typeof element === 'string') {
+                strings.push(element);
+            }
+        });
+        this.num = numbers;
+        this.str = strings;
+    }
+    return Word;
+}());
+var obj = new Word('kim', 3, 5, 'park');
+console.log(obj.num);
+console.log(obj.str);
+var 상품 = { brand: 'Samsung', serialNumber: 1360, model: ['TV', 'Phone'] };
+var 장바구니 = [{ product: '청소기', price: 7000, card: true }, { product: '삼다수', price: 800 }];
+console.log(장바구니);
+var mathObj = {
+    plus: function (a, b) {
+        return a + b;
+    },
+    minus: function (a, b) {
+        return a - b;
+    }
+};
+function 함수2(animal) {
+    if ('swim' in animal) {
+        return 'Fish';
+    }
+    else if ('fly' in animal) {
+        return 'Bird';
+    }
+}
+var 날짜 = new Date();
+if (날짜 instanceof Date) {
+    console.log(날짜);
+}
+function 함수3(x) {
+    if (x.wheel === '4개') {
+        console.log('x는 Car 타입이에요');
+    }
+}
+function 함수4(parameter) {
+    if (typeof parameter === 'string') {
+        console.log(parameter);
+    }
+    else {
+        console.log(parameter);
+    }
+}
