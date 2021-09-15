@@ -355,3 +355,28 @@ function 함수4(parameter : string){
     console.log(parameter); 
   }
 }
+
+class User2{
+  name :string;
+  private familyName :string = 'Kim'
+  constructor(a:string){
+    this.name = a + this.familyName;
+  }
+
+  이름변경함수(){
+    this.familyName = 'Park'
+  }
+}
+
+let 유저1 = new User2('민수');  //user1의 name은 민수킴
+console.log(유저1.name);
+
+class Person2 {
+  constructor(public name :string){
+
+  }
+  
+}
+
+let 자식 = new Person2('Kim');
+console.log(자식.name);

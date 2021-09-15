@@ -230,3 +230,23 @@ function 함수4(parameter) {
         console.log(parameter);
     }
 }
+var User2 = /** @class */ (function () {
+    function User2(a) {
+        this.familyName = 'Kim';
+        this.name = a + this.familyName;
+    }
+    User2.prototype.이름변경함수 = function () {
+        this.familyName = 'Park';
+    };
+    return User2;
+}());
+var 유저1 = new User2('민수'); //user1의 name은 민수킴
+console.log(유저1.name);
+var Person2 = /** @class */ (function () {
+    function Person2(name) {
+        this.name = name;
+    }
+    return Person2;
+}());
+var 자식 = new Person2('Kim');
+console.log(자식.name);
