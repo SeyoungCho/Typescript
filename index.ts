@@ -224,4 +224,134 @@ let 링크변경버튼 = document.querySelector('#linkChange');
   })
 });
 
+class People {
+  name :string;
+  constructor(a :string){
+    this.name=a;
+  }
 
+  함수(a: string){
+    console.log('안녕' + a);
+  }
+}
+
+let human = new People('kim');
+console.log(human.name);
+console.log(human.함수('기모창'));
+
+class Car {
+  model :string;
+  price :number;
+  constructor(a :string, b :number){
+    this.model = a;
+    this.price = b;
+  }
+
+  tax() :number{
+    return this.price / 10;
+  }
+}
+
+let car1 = new Car('소나타', 3000);
+console.log(car1);
+console.log(car1.tax());
+
+class Word {
+  num :number[];
+  str :string[];
+
+  constructor(...a: (string | number)[]){
+    let numbers :number[] = [];
+    let strings :string[] = [];
+    a.forEach((element) =>{
+      if(typeof element === 'number'){
+        numbers.push(element);
+      }else if(typeof element === 'string'){
+        strings.push(element);
+      }
+    });
+
+    this.num = numbers;
+    this.str = strings;
+  }
+}
+
+let obj = new Word('kim', 3, 5, 'park');
+console.log(obj.num);
+console.log(obj.str);
+
+interface Product {
+  brand : string,
+  serialNumber : number,
+  model : string[]
+}
+
+let 상품 :Product = { brand : 'Samsung', serialNumber : 1360, model : ['TV', 'Phone'] };
+
+interface CartItem {
+  product :string,
+  price :number
+}
+type Cart = (CartItem | CartItemPlus)[];
+interface CartItemPlus extends CartItem {
+  card : boolean
+}
+let 장바구니 :Cart= [ { product : '청소기', price : 7000 , card : true}, { product : '삼다수', price : 800 } ] 
+
+console.log(장바구니);
+
+interface MathObj {
+  plus(a:number, b:number):number,
+  minus(a:number, b:number):number
+}
+
+let mathObj :MathObj = {
+  plus(a,b){
+    return a+b
+  },
+  minus(a,b){
+    return a-b
+  }
+}
+
+type Fish = {swim : string}
+type Bird = {fly : string}
+
+function 함수2(animal : Fish | Bird){
+  if('swim' in animal){
+    return 'Fish'
+  }
+  else if('fly' in animal){
+    return 'Bird'
+  }
+}
+
+let 날짜 = new Date();
+
+if(날짜 instanceof Date){
+  console.log(날짜);
+}
+
+type Car2 = {
+  wheel: '4개',
+  color: string
+}
+
+type Bike = {
+  wheel: '2개',
+  color: string
+}
+
+function 함수3(x: Car2 | Bike){
+  if(x.wheel === '4개'){
+    console.log('x는 Car 타입이에요');
+  }
+}
+
+function 함수4(parameter : string){
+  if(typeof parameter === 'string'){
+    console.log(parameter);
+  }else{
+    console.log(parameter); 
+  }
+}
