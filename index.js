@@ -1,6 +1,22 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 //let 이름 :string = 'Kim';
 //이름이라는 변수에는 string(문자)만 올 수 있습니다~
 //string, number, boolean, null, undefined, bigint, [] ,{}등이 타입이 될 수 있다.
+import { 이름1, 나이 } from './a';
 var 이름 = '조세영';
 var age = 27;
 var placeOfBirth = 'Busan';
@@ -250,3 +266,71 @@ var Person2 = /** @class */ (function () {
 }());
 var 자식 = new Person2('Kim');
 console.log(자식.name);
+var User4 = /** @class */ (function () {
+    function User4() {
+        this.x = 10;
+    }
+    return User4;
+}());
+var NewUser2 = /** @class */ (function (_super) {
+    __extends(NewUser2, _super);
+    function NewUser2() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return NewUser2;
+}(User4));
+var a = new NewUser2();
+console.log(a);
+var User3 = /** @class */ (function () {
+    function User3() {
+        this.intro = 'js 전문가입니다';
+    }
+    User3.skill = 'js';
+    return User3;
+}());
+var 철수2 = new User3();
+console.log(철수2);
+User3.skill = 'ts';
+var 철수3 = new User3();
+console.log(철수3);
+var User5 = /** @class */ (function () {
+    function User5() {
+    }
+    User5.addOne = function (a) {
+        User5.x = User5.x + a;
+    };
+    User5.printX = function () {
+        console.log(User5.x);
+    };
+    User5.x = 10;
+    User5.y = 20;
+    return User5;
+}());
+User5.addOne(3);
+User5.addOne(4);
+User5.printX();
+var Square = /** @class */ (function () {
+    function Square(a, b, c) {
+        this.width = a;
+        this.height = b;
+        this.color = c;
+    }
+    Square.prototype.draw = function () {
+        var randomBox = document.createElement('div');
+        randomBox.style.width = this.width + 'px';
+        randomBox.style.height = this.height + 'px';
+        randomBox.style.backgroundColor = this.color;
+        randomBox.style.left = Math.random() * 300 + 'px';
+        randomBox.style.top = Math.random() * 300 + 'px';
+        randomBox.style.display = 'block';
+        randomBox.style.position = 'relative';
+        document.body.appendChild(randomBox);
+    };
+    return Square;
+}());
+var 네모 = new Square(30, 30, 'red');
+네모.draw();
+네모.draw();
+네모.draw();
+네모.draw();
+console.log(이름1, 나이);

@@ -1,6 +1,8 @@
 //let 이름 :string = 'Kim';
 //이름이라는 변수에는 string(문자)만 올 수 있습니다~
 //string, number, boolean, null, undefined, bigint, [] ,{}등이 타입이 될 수 있다.
+import {이름1, 나이} from './a';
+
 let 이름 :string = '조세영';
 let age :number = 27;
 let placeOfBirth :string = 'Busan';
@@ -380,3 +382,77 @@ class Person2 {
 
 let 자식 = new Person2('Kim');
 console.log(자식.name);
+
+class User4 {
+  protected x = 10;
+}
+
+class NewUser2 extends User4 {
+  
+}
+
+let a = new NewUser2();
+console.log(a);
+
+class User3 {
+  static skill = 'js';
+  intro = 'js 전문가입니다';
+}
+
+let 철수2 = new User3();
+console.log(철수2);
+User3.skill = 'ts';
+let 철수3 = new User3();
+console.log(철수3);
+
+class User5 {
+  
+  private static x = 10;
+  public static y = 20;
+
+  static addOne(a :number):void{
+    User5.x = User5.x + a;
+  }
+
+  static printX(){
+    console.log(User5.x);
+  }
+
+}
+
+User5.addOne(3);
+User5.addOne(4);
+User5.printX();
+
+class Square {
+
+  width :number;
+  height :number;
+  color :string;
+
+  constructor(a :number, b :number, c :string){
+    this.width = a;
+    this.height = b;
+    this.color = c;
+  }
+
+  draw():void{
+    const randomBox = document.createElement('div');
+    randomBox.style.width = this.width + 'px';
+    randomBox.style.height = this.height + 'px';
+    randomBox.style.backgroundColor = this.color;
+    randomBox.style.left = Math.random() * 300 + 'px';
+    randomBox.style.top = Math.random() * 300 + 'px';
+    randomBox.style.display = 'block';
+    randomBox.style.position = 'relative';
+    document.body.appendChild(randomBox);
+  }
+}
+
+let 네모 = new Square(30, 30, 'red');
+네모.draw();
+네모.draw();
+네모.draw();
+네모.draw();
+
+console.log(이름1, 나이);
