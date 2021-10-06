@@ -334,3 +334,17 @@ var 네모 = new Square(30, 30, 'red');
 네모.draw();
 네모.draw();
 console.log(이름1, 나이);
+function 함수5(x) {
+    return x[0];
+}
+var b = 함수5([4, 2]);
+console.log(b);
+function 함수6(x) {
+    return x[0];
+}
+var c = 함수6([4, 2]);
+function 함수7(x) {
+    return x.length;
+}
+var d = 함수7(['100']);
+console.log(d);

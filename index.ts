@@ -456,3 +456,27 @@ let 네모 = new Square(30, 30, 'red');
 네모.draw();
 
 console.log(이름1, 나이);
+
+function 함수5(x :unknown[]) {
+  return x[0];
+}
+
+let b = 함수5([4,2]);
+console.log(b);
+
+function 함수6<Type>(x: Type[]) : Type{
+  return x[0];
+}
+
+let c = 함수6<number>([4,2]);
+
+interface LengthCheck {
+  length : number
+}
+
+function 함수7<MyType extends LengthCheck>(x: MyType){
+  return x.length;
+}
+
+let d = 함수7<string[]>(['100']);
+console.log(d);
